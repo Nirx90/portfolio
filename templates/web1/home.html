@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <script src="https://kit.fontawesome.com/a8995c637e.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static "css/web1/style.css" %}">
+        <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    </head>
+
+    <body class="bg-light">
+        <!-- nav bar start -->
+        <nav class="navbar shadow-sm fixed-top navbar-expand-lg bg-light">
+            <div class="container">
+                <a href="" class="navbar-brand fs-3 ms-3 text-danger">N.J.C</a>
+                <button class="navbar-toggler me-4 bg-danger" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#btn">
+                    <i class="fas fa-bars bx-md text-white"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="btn">
+                    <ul class="navbar-nav ms-auto  mb-lg-0 text-center">
+                        <li class="nav-item">
+                            <a href="" class="nav-link mx-2 text-danger fs-5">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link mx-2 text-danger fs-5">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#servieces" class="nav-link mx-2 text-danger fs-5">Servieces</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#testimonials" class="nav-link mx-2 text-danger fs-5 tlink">Testimonials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link mx-2 text-danger fs-5">Contact</a>
+                        </li>
+                        <li class="">
+                            {% for f in file %}
+                            <a href="{{f.file.url}}" target="_blank">
+                                <button class="Dbutton">Download CV</button>
+                            </a>
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- nav end -->
+
+        <!-- home section start? -->
+        <section class="home py-3 mt-md-0" id="home">
+            <div class="container-lg mx-auto">
+                <div class="row min-vh-100 align-items-center align-content-center">
+                    <div class="col-md-6 mt-5 mt-md-0">
+                        <div class="home-img text-center">
+                            <img src="{% static "/image/profile.jpg" %}" alt="profile img"
+                                class="rounded-circle mw-100"></img>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-5 mt-md-0 order-md-first">
+                        <div class="home-text homesection">
+                            <p class="text-muted mb-1">Hello I'm</p>
+                            <h1 class="text-danger text-uppercase fs-1 fw-bold">Python Developer</h1>
+                            <h2 class="fs=-4">Nirav Chaudhari</h2>
+                            <p class="mt-4 text-muted">I am a dynamic and innovative developer specializing in website
+                                development, mobile app creation, and customized software solutions. I combine technical
+                                expertise with creative problem-solving to deliver high-quality digital products that
+                                meet the unique needs of my clients.</p>
+                            <a href="#portfolio"><button class="Dbutton" type="button">
+                                    <!-- btn btn-secondary my-2 btn-danger px-3 py-1 -->
+                                    My Work
+                                </button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- home section end -->
+
+
+        <!-- about section start -->
+
+
+        <section class="skills py-5" id="about">
+            <div class="container-lg">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-title justify-content-center align-items-center d-flex gap-4 skill-flex"
+                            id="btnContainer">
+                            <button onclick="gridView()" class="btn2 active">
+                                <iconify-icon icon="vaadin:list-ul" style="font-size: 30px;"></iconify-icon>
+                                <p>List View</p>
+                            </button>
+                            <div>
+                                <h2 class="fw-bold">Skills</h2>
+                            </div>
+                            <button onclick="listView()" class="btn2">
+                                <iconify-icon icon="ep:menu" style="font-size: 30px;"></iconify-icon>
+                                <p>Grid View</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="skills-section-listview">
+                    <div class="skills_main">
+                        <div class="front-end">
+                            <div class="skill_bar">
+                                <div class="info">
+                                    <div class="head">
+                                        <p>HTML5</p>
+                                    </div>
+                                    <iconify-icon icon="flowbite:html-solid" class="icony"></iconify-icon>
+                                    <P>90%</P>
+                                </div>
+                                <div class="bar">
+                                    <span style="width: 90%; animation:html 2s;"></span>
+                                </div>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="info">
+                                    <div class="head">
+                                        <p>CSS3</p>
+                                    </div>
+                                    <iconify-icon icon="devicon-plain:css3" class="icony"></iconify-icon>
+                                    <P>65%</P>
+                                </div>
+                                <div class="bar">
+                                    <span style="width: 65%; animation:css 2s;"></span>
+                                </div>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="info">
+                                    <div class="head">
+                                        <p>JavaScript</p>
+                                    </div>
+                                    <iconify-icon icon="ri:javascript-fill" class="icony"></iconify-icon>
+                                    <P>40%</P>
+                                </div>
+                                <div class="bar">
+                                    <span style="width: 40%; animation:javascript 2s;"></span>
+                                </div>
+                            </div>
+
+                            <div class="skill_bar">
+                                <div class="info">
+                                    <div class="head">
+                                        <p>Bootstrap</p>
+                                    </div>
+                                    <iconify-icon icon="akar-icons:bootstrap-fill" class="icony"></iconify-icon>
+                                    <P>50%</P>
+                                </div>
+                                <div class="bar">
+                                    <span style="width: 50%; animation:bootstrap 2s;"></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="back-end">
+
+                            <div class="skill_bar">
+                                <div class="info">
+                                    <div class="head">
+                                        <p>Python</p>
+                                    </div>
+                                    <iconify-icon icon="simple-icons:python" class="icony"></iconify-icon>
+                                    <P>75%</P>
+                                </div>
+                                <div class="bar">
+                                    <span style="width: 75%; animation:python 2s"></span>
+                                </div>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="info">
+                                    <div class="head">
+                                        <p>Django</p>
+                                    </div>
+                                    <iconify-icon icon="akar-icons:django-fill" class="icony"></iconify-icon>
+                                    <P>62%</P>
+                                </div>
+                                <div class="bar">
+                                    <span style="width: 62%; animation:django 2s"></span>
+                                </div>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="info">
+                                    <div class="head">
+                                        <p>Angular</p>
+                                    </div>
+                                    <iconify-icon icon="akar-icons:angular-fill" class="icony"></iconify-icon>
+                                    <P>65%</P>
+                                </div>
+                                <div class="bar">
+                                    <span style="width: 65%; animation:angular 2s"></span>
+                                </div>
+                            </div>
+                            <div class="skill_bar">
+                                <div class="info">
+                                    <div class="head">
+                                        <p>MySql</p>
+                                    </div>
+                                    <iconify-icon icon="fontisto:mysql" class="icony"></iconify-icon>
+                                    <P>65%</P>
+                                </div>
+                                <div class="bar">
+                                    <span style="width: 65%; animation:mysql 2s"></span>
+                                </div>
+                            </div>
+
+                            <div class="skill_bar">
+                                <div class="info">
+                                    <div class="head">
+                                        <p>MongoDB</p>
+                                    </div>
+                                    <iconify-icon icon="simple-icons:mongodb" class="icony"></iconify-icon>
+                                    <P>60%</P>
+                                </div>
+                                <div class="bar">
+                                    <span style="width: 60%; animation:mongo 2s"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="skills-section-gridview" style="display: none;">
+                    {% for s in skill %}
+                    <div class="skill-box">
+                        <div class="service-item shadow p-4 rounded bg-light">
+                            <div class="icon my-3 text-danger fs-2">
+                                <iconify-icon icon="{{s.icon}}"></iconify-icon>
+                            </div>
+                            <h3 class="fs-5 py-2">{{s.name}}</h3>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+
+        <section class="service py-5 mt-5 mt-md-0 " id="servieces">
+            <div class="container-lg py-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 ">
+                        <div class="section-title text-center">
+                            <h2 class="fw-bold mb-5">What i Serve</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-md-6 col-lg-4 py-4">
+                        <div class="service-item shadow-sm p-4 rounded bg-white mh-2">
+                            <div class="icon my-3 text-danger fs-2">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3 class="fs-5 py-2">Web Development</h3>
+                            <p class="text-muted">Provide a responsive websites using reqiured frameworks.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 py-4">
+                        <div class="service-item shadow-sm p-4 rounded bg-white mh-2">
+                            <div class="icon my-3 text-danger fs-2">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+                            <h3 class="fs-5 py-2">Creative Design</h3>
+                            <p class="text-muted">Provide a responsive websites using reqiured frameworks.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 py-4">
+                        <div class="service-item shadow-sm p-4 rounded bg-white mh-2">
+                            <div class="icon my-3 text-danger fs-2">
+                                <i class="fa-brands fa-figma"></i>
+                            </div>
+                            <h3 class="fs-5 py-2">Figma</h3>
+                            <p class="text-muted">Provide a responsive websites preview.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio section Start -->
+
+
+        <section class="mywork" id="portfolio">
+            <div class="container-lg py-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 ">
+                        <div class="section-title text-center">
+                            <h2 class="fw-bold mb-5">My Work</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="work-container">
+                        <div class="col bg-light bg-white shadow-sm rounded p-2">
+
+                            <div class="portfolio-item">
+                                <div class="onimageoverlay">
+                                    <a href="{% url 'redirect2lms' %}" target="_blank">
+                                        <Button class="onimagebutton">GO Live</Button>
+                                    </a>
+                                </div>
+                                <img src="{% static "image/msl.png" %}" style="height: 200px;"
+                                    class="w-100 img-thumnail rounded" alt="portfolio-item">
+                                </img>
+                            </div>
+                            <h3 class="text-capitalize fs-5 my-3">LMS - Library Management System</h3>
+                            <div class="mobilegolivebutton">
+                                <a href="{% url 'redirect2lms' %}" target="_blank">
+                                    <Button class="onimagebutton">GO Live</Button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col bg-light bg-white shadow-sm rounded p-2">
+                            <div class="portfolio-item">
+                                <div class="onimageoverlay">
+                                    <a href="{% url 'redirect2curd' %}" target="_blank">
+                                        <Button class="onimagebutton">GO Live</Button>
+                                    </a>  
+                                </div>
+                                <img src="{% static "image/curd-django.png" %}" style="height: 200px;"
+                                        class="w-100 img-thumnail rounded" alt="portfolio-item">
+                                </img>
+                            </div>
+                            <h3 class="text-capitalize fs-5 my-3">Django CURD Operation</h3>
+                            <div class="mobilegolivebutton">
+                                <a href="{% url 'redirect2curd' %}" target="_blank">
+                                    <Button class="onimagebutton">GO Live</Button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col bg-light bg-white shadow-sm rounded p-2">
+                            <div class="portfolio-item">
+                                <div class="onimageoverlay">
+                                    <a href="{% url 'redirect2todo' %}" target="_blank">
+                                        <Button class="onimagebutton">GO Live</Button>
+                                    </a>
+                                </div>
+                                <img src="{% static "image/to-do-js.png" %}" style="height: 200px;"
+                                    class="w-100 img-thumnail rounded" alt="portfolio-item">
+                                </img>
+                                
+                            </div>
+                            <h3 class="text-capitalize fs-5 my-3">TODO - App JavaScript</h3>
+                            <div class="mobilegolivebutton">
+                                <a href="{% url 'redirect2todo' %}" target="_blank">
+                                    <Button class="onimagebutton">GO Live</Button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col bg-light bg-white shadow-sm rounded p-2">
+                            <div class="portfolio-item">
+                                <div class="onimageoverlay">
+                                    <a href="{% url 'redirect2cmd' %}" target="_blank">
+                                        <Button class="onimagebutton">GO Live</Button>
+                                    </a>
+                                </div>
+                                <img src="{% static "image/cmd.jpeg" %}" style="height: 200px;"
+                                    class="w-100 img-thumnail rounded" alt="portfolio-item">
+                                </img>
+                            </div>
+                            <h3 class="text-capitalize fs-5 my-3">CMD - Connect My Doctor</h3>
+                            <div class="mobilegolivebutton">
+                                <a href="{% url 'redirect2cmd' %}" target="_blank">
+                                    <Button class="onimagebutton">GO Live</Button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <!-- freelancer section start-->
+        <section class="freelancer-avaolable py-5 bg-danger" id="hireme">
+            <div class="container-lg py-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <p class="text-light fs-5">Do you have any project?</p>
+                        <h2 class="fs-1 text-white mb-4">I'm Available for Freelancing Project</h2>
+                        <a href="#contact" class="btn btn-outline-light">Hire me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- freelancer section end-->
+
+        <!-- testimonials section End -->
+        <section class="testimonials py-5" id="testimonials">
+            <div class="container-lg py-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 ">
+                        <div class="section-title text-center">
+                            <h2 class="fw-bold mb-5">Testimonials</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-7">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active bg-danger" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    class="bg-danger" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    class="bg-danger" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner p-1">
+                                <!-- testi-item start -->
+                                <div class="testi-items carousel-item active bg-white shadow-sm rounded p-4 mb-5">
+                                    <div class="testi-author-info d-flex align-items-center">
+                                        <img src="{% static "/image/Parth.png" %}" alt="profile img"
+                                            class="img-thumnail rounded-circle"
+                                            style="width: 60px; height: 60px;"></img>
+                                        <div class="author ms-3">
+                                            <h3 class="fs-6 mb-1">Parth Makwana</h3>
+                                            <p class="text-muted m-0">Angular Developer</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-muted mt-3">A very greatful serviece from these client.</p>
+                                    <div class="rating text-danger">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <!-- testi-item end -->
+                                <!-- testi-item start -->
+                                <div class="testi-items bg-white carousel-item  shadow-sm rounded p-4 mb-5">
+                                    <div class="testi-author-info d-flex align-items-center">
+                                        <img src="{% static "/image/muskaan.png" %}" alt="profile img"
+                                            class="img-thumnail rounded-circle"
+                                            style="width: 60px; height: 60px;"></img>
+                                        <div class="author ms-3">
+                                            <h3 class="fs-6 mb-1">Muskan kazi</h3>
+                                            <p class="text-muted m-0">Java Tester</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-muted mt-3">He is very intelligent Python Developer. A decent web
+                                        serviece provider. And also a good Techer.</p>
+
+                                    <div class="rating text-danger">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <!-- testi-item end -->
+                                <!-- testi-item start -->
+                                <div class="testi-items bg-white carousel-item shadow-sm rounded p-4 mb-5">
+                                    <div class="testi-author-info d-flex align-items-center">
+                                        <img src="{% static "/image/shakshi.png" %}" alt="profile img"
+                                            class="img-thumnail rounded-circle"
+                                            style="width: 60px; height: 60px;"></img>
+                                        <div class="author ms-3">
+                                            <h3 class="fs-6 mb-1">Sakshi Shankar</h3>
+                                            <p class="text-muted m-0">Data Analysts</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-muted mt-3">I'm totaly unhappy with the serviece from this client.
+                                        This client is
+                                        selfish. not providing proper serviece and charges are too high and he is very
+                                        Rude too, but still i'm giving 4 Star Rating.
+                                    </p>
+                                    <div class="rating text-danger">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <!-- testi-item end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials section End -->
+
+
+        <!-- contact section start -->
+        <section class="contact py-5 " id="contact">
+            <div class="container-lg py-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 ">
+                        <div class="section-title text-center">
+                            <h2 class="fw-bold mb-5">Contact Me</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 ">
+                        <div class="contectitem">
+                            <div class="sepratecontactitem">
+                                <div class="contact-item d-flex mb-3 ">
+                                    <div class="icon fs-4 text-danger">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div class="text ms-3">
+                                        <h3 class="fs-5">Email</h3>
+                                        <p class="text-muted">inirav114@gmail.com</p>
+                                    </div>
+                                </div>
+
+                                <div class="contact-item d-flex mb-3 ">
+                                    <div class="icon fs-4 text-danger">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div class="text ms-3">
+                                        <h3 class="fs-5">Phone</h3>
+                                        <p class="text-muted">+91 9586837258</p>
+                                    </div>
+                                </div>
+
+                                <div class="contact-item d-flex mb-3 ">
+                                    <div class="icon fs-4 text-danger">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div class="text ms-3">
+                                        <h3 class="fs-5">Location</h3>
+                                        <p class="text-muted">Surat, Gujrat</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="social-item d-flex mb-3 ">
+                                <div class="icon fs-3 d-flex gap-3 m-0">
+                                    <a href="https://www.linkedin.com/in/chaudhari-nirav-18b797209/"
+                                        style="text-decoration: none;" target="_blank">
+                                        <div class="icons shadow-sm">
+                                            <i class="fa-brands fa-linkedin-in"></i>
+                                        </div>
+                                    </a>
+                                    <a href="https://github.com/Nirx90" style="text-decoration: none;" target="_blank">
+                                        <div class="icons shadow-sm">
+                                            <i class="fa-brands fa-github"></i>
+                                        </div>
+                                    </a>
+                                    <a hhref="https://www.instagram.com/nirav6035/" style="text-decoration: none;"
+                                        target="_blank">
+                                        <div class="icons shadow-sm">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </div>
+                                    </a>
+                                    <a href="https://x.com/NiravCh99302380" style="text-decoration: none;"
+                                        target="_blank">
+                                        <div class="icons shadow-sm">
+                                            <i class="fa-brands fa-twitter"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-7">
+                        <div class="contact-form">
+                            <form action="{% url 'contact' %}" method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-6 mb-4">
+                                        <input type="text" name="name" id="name" placeholder="Your Name"
+                                            class="form-control form-conrtol-lg fs-6 border-0 shadow-sm"
+                                            required></input>
+                                    </div>
+                                    <div class="col-lg-6 mb-4">
+                                        <input type="email" name="email" id="email" placeholder="Your Email"
+                                            class="form-control form-conrtol-lg fs-6 border-0 shadow-sm"
+                                            required></input>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 mb-4">
+                                        <input type="text" name="subject" id="subject" placeholder="Subject"
+                                            class="form-control form-conrtol-lg fs-6 border-0 shadow-sm"
+                                            required></input>
+                                    </div>
+
+                                    <div class="col-lg-12 mb-4">
+                                        <textarea type="text" rows="5" name="message" id="message"
+                                            placeholder="Your Message"
+                                            class="form-control form-conrtol-lg fs-6 border-0 shadow-sm"
+                                            required></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-lg-12 aligncenter">
+                                        <!-- <button type="submit" class="Dbutton position-relative"></button> -->
+                                        <button type="submit" class="Dbutton position-relative">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="footer border-top py-4">
+            <div class="container-lg">
+                <div class="row text-center">
+                    <div class="col-lg-12">
+                        <p class="m-0 text-muted">&copy; 2024 all rights reserved to owner of this website</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        {% for msg in messages %}
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <div class="pop-text">
+                    <p class="fs-6 text-danger">Thank you for contacting me. I'll reachout to you as soon as possible..!
+                        {{msg.name}}
+                    </p>
+                </div>
+                <div class="cross">
+                    <div onclick="hidePopup()">
+                        <iconify-icon icon="charm:cross" class="bandh"></iconify-icon>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+
+
+        <script>
+            function showPopup() {
+                document.getElementById('popup').style.display = 'flex';
+                //  var c = document.getElementById('popup')
+                //  c.className.replace = 'show';
+            }
+
+            function hidePopup() {
+                document.getElementById('popup').style.display = 'none';
+            }
+            var row1 = document.getElementsByClassName("skills-section-listview");
+            var row2 = document.getElementsByClassName("skills-section-gridview");
+            // Declare a loop variable
+            var i;
+            // List View
+
+            // Grid View
+            function gridView() {
+                for (i = 0; i < row2.length; i++) {
+                    row1[i].style.display = "";
+                    row2[i].style.display = "none";
+                }
+            }
+            function listView() {
+                for (i = 0; i < row1.length; i++) {
+                    row1[i].style.display = "none";
+                    row2[i].style.display = "";
+                }
+            }
+            /* Optional: Add active class to the current button (highlight it) */
+            var container = document.getElementById("btnContainer");
+            var btns = container.getElementsByClassName("btn2");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function () {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                });
+            }
+        </script>
+    </body>
+
+</html>
