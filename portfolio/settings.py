@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-1a133r_4lm*v5&7*w#l!phg4f$k55d2=ipyasg0ai*g*+1_w5$
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS= [""]
 
 # Application definition
 
@@ -53,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -126,8 +128,11 @@ STATICFILES_DIRS = [
     STATIC_DIR
 ]
 
+STATICSTORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
